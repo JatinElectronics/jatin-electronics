@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Jatin Electronics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#003366',
+                        sky: '#0099FF',
+                        orange: '#FF6633',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #003366 0%, #0099FF 100%); }
+        .card-shadow { box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1); transition: all 0.3s ease; }
+        .card-shadow:hover { box-shadow: 0 12px 20px rgba(0, 51, 102, 0.2); transform: translateY(-4px); }
+        .timeline-item { border-left: 4px solid #0099FF; padding-left: 20px; }
+        .cert-box { border-top: 4px solid #FF6633; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-navy to-sky rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">JE</span>
+                    </div>
+                    <div>
+                        <p class="text-navy font-bold text-lg">Jatin</p>
+                        <p class="text-orange text-xs font-semibold">Electronics</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-navy hover:text-orange font-semibold transition">Home</a>
+                    <a href="about.html" class="text-orange font-semibold">About</a>
+                    <a href="products.html" class="text-navy hover:text-orange font-semibold transition">Products</a>
+                    <a href="index.html#contact" class="text-navy hover:text-orange font-semibold transition">Contact</a>
+                </div>
+
+                <button @click="open = !open" class="md:hidden p-2">
+                    <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div x-show="open" class="md:hidden pb-4 border-t border-gray-200">
+                <a href="index.html" class="block text-navy py-2 font-semibold">Home</a>
+                <a href="about.html" class="block text-orange py-2 font-semibold">About</a>
+                <a href="products.html" class="block text-navy py-2 font-semibold">Products</a>
+                <a href="index.html#contact" class="block text-navy py-2 font-semibold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-bg text-white pt-32 pb-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About Jatin Electronics</h1>
+            <p class="text-lg text-gray-100">27 Years of Manufacturing Excellence & Innovation</p>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="py-16 md:py-24 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">Our Story</h2>
+                    <p class="text-gray-700 text-lg mb-4">
+                        Founded in 1997 by Mr. Akshay Kumar Mali, Jatin Electronics began with a clear vision: to make Udaipur a prominent hub for electronics manufacturing. What started as a dedicated small operation has grown into a trusted partner for major industrial clients across India.
+                    </p>
+                    <p class="text-gray-700 text-lg mb-4">
+                        For over 27 years, we have maintained our unwavering commitment to zero-defect product manufacturing while continuously expanding our capabilities, expertise, and client base.
+                    </p>
+                    <p class="text-gray-700 text-lg">
+                        Today, Jatin Electronics stands as an industry leader in contract manufacturing, known for exceptional reliability, uncompromising quality, and professional service.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-sky/5 to-orange/5 rounded-2xl p-8 border-2 border-sky/30">
+                    <h3 class="text-2xl font-bold text-navy mb-8">Key Milestones</h3>
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <p class="text-orange font-bold text-xl">1997</p>
+                            <p class="font-bold text-navy mt-2">Company Founded</p>
+                            <p class="text-gray-600 text-sm">Mr. Akshay Kumar Mali establishes Jatin Electronics in Udaipur with a vision for excellence</p>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="text-orange font-bold text-xl">2000s</p>
+                            <p class="font-bold text-navy mt-2">Facility Expansion</p>
+                            <p class="text-gray-600 text-sm">Continuous growth and expansion across all product manufacturing lines</p>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="text-orange font-bold text-xl">2024</p>
+                            <p class="font-bold text-navy mt-2">ISO 9001:2015 Certified</p>
+                            <p class="text-gray-600 text-sm">Achieved international quality management certification (UK-045-9775)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission Vision Values -->
+            <div class="grid md:grid-cols-3 gap-8 py-12 border-t-2 border-b-2 border-gray-300">
+                <div class="card-shadow bg-white rounded-xl p-8 border-t-4 border-orange">
+                    <h3 class="text-2xl font-bold text-orange mb-4">Mission</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        To be a pioneer in electronics contract manufacturing and deliver true world-class products to prestigious clients through innovation, quality, and reliability.
+                    </p>
+                </div>
+
+                <div class="card-shadow bg-white rounded-xl p-8 border-t-4 border-sky">
+                    <h3 class="text-2xl font-bold text-sky mb-4">Vision</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        To make Udaipur a prominent hub for electronics manufacturing and establish Jatin Electronics as a trusted global partner for electronics manufacturing excellence.
+                    </p>
+                </div>
+
+                <div class="card-shadow bg-white rounded-xl p-8 border-t-4 border-navy">
+                    <h3 class="text-2xl font-bold text-navy mb-4">Core Values</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="font-semibold">✓ Quality First</li>
+                        <li class="font-semibold">✓ Reliability</li>
+                        <li class="font-semibold">✓ Innovation</li>
+                        <li class="font-semibold">✓ Customer Focus</li>
+                        <li class="font-semibold">✓ Professional Excellence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section class="py-16 md:py-24 px-4 md:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2">Our Manufacturing Facilities</h2>
+            <p class="text-orange font-semibold mb-12">State-of-the-Art Infrastructure & Equipment</p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="card-shadow bg-white rounded-xl p-8 border-2 border-navy">
+                    <h3 class="text-2xl font-bold text-navy mb-4">📍 Head Office</h3>
+                    <p class="text-gray-700 font-semibold mb-2">Jatin Plaza, 1-12 Commercial Complex</p>
+                    <p class="text-gray-600">Opp. Navneet Motors, Mewar Industrial Area</p>
+                    <p class="text-gray-600 mb-4">Udaipur (Raj.) 313003, India</p>
+                    <p class="text-sky font-semibold">The heart of our operations</p>
+                </div>
+
+                <div class="card-shadow bg-white rounded-xl p-8 border-2 border-orange">
+                    <h3 class="text-2xl font-bold text-orange mb-4">🏭 Manufacturing Facility</h3>
+                    <p class="text-gray-700 font-semibold mb-2">13, 14 Commercial Complex</p>
+                    <p class="text-gray-600">Near Telephone Exchange, Mewar Industrial Area</p>
+                    <p class="text-gray-600 mb-4">Udaipur (Raj.) 313003, India</p>
+                    <p class="text-sky font-semibold">15,000 sq ft of manufacturing excellence</p>
+                </div>
+            </div>
+
+            <div class="card-shadow bg-white rounded-xl p-8 border-2 border-gray-200">
+                <h3 class="text-2xl font-bold text-navy mb-8">Facility Capabilities & Features</h3>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <p class="font-bold text-navy mb-4 text-lg">Infrastructure</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>15,000 sq ft covered manufacturing area</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>Fully self-contained establishment</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>ESD-safe working environment</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>Streamlined assembly lines</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>Climate-controlled areas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-bold text-navy mb-4 text-lg">Manufacturing Capabilities</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>Complete in-house design & manufacturing</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>Own quality assurance department</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>Professional testing facility</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>Modern equipment & processes</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-orange font-bold">✓</span>
+                                <span>Skilled workforce (27+ years experience)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="py-16 md:py-24 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2">Certifications & Compliance</h2>
+            <p class="text-orange font-semibold mb-12">Meeting International Quality Standards</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-shadow bg-white rounded-xl p-8 cert-box border-2 border-gray-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-orange/10 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-3xl">✓</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy">ISO 9001:2015</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">Quality Management System Certification</p>
+                    <div class="space-y-2 text-sm text-gray-600 bg-gray-50 p-4 rounded-lg">
+                        <p><strong>Issued by:</strong> UKAF CERT Limited</p>
+                        <p><strong>Certificate:</strong> UK-045-9775</p>
+                        <p><strong>Effective Date:</strong> 10-08-2024</p>
+                        <p><strong>Expiry Date:</strong> 09-08-2027</p>
+                        <p><strong>Scope:</strong> Manufacturing of communication cables, wire harnesses, power supplies, LED drivers, and electronic goods</p>
+                    </div>
+                </div>
+
+                <div class="card-shadow bg-white rounded-xl p-8 cert-box border-2 border-gray-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-sky/10 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-3xl">⭐</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-sky">Manufacturing Scope</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">Certified for the following manufacturing services:</p>
+                    <ul class="space-y-2 text-sm text-gray-700 bg-gray-50 p-4 rounded-lg">
+                        <li>✓ Communication cable manufacturing</li>
+                        <li>✓ Wire harness assembly</li>
+                        <li>✓ Power supply manufacturing</li>
+                        <li>✓ LED driver production</li>
+                        <li>✓ Circuit card assembly</li>
+                        <li>✓ Torroidal assembly</li>
+                        <li>✓ PCB soldering services</li>
+                        <li>✓ Electrical & electronics goods</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients -->
+    <section class="py-16 md:py-24 px-4 md:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2">Our Trusted Clients</h2>
+            <p class="text-orange font-semibold mb-12">Partnering with 10+ Major Industrial Companies</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="card-shadow bg-white rounded-xl p-6 border-l-4 border-navy">
+                    <p class="font-bold text-navy text-lg">Secure Meters Limited</p>
+                    <p class="text-gray-600 text-sm mt-2">Multiple manufacturing units (Udaipur, Sanand, Bated)</p>
+                </div>
+                <div class="card-shadow bg-white rounded-xl p-6 border-l-4 border-sky">
+                    <p class="font-bold text-navy text-lg">Pyrotech Electronics Pvt. Ltd.</p>
+                    <p class="text-gray-600 text-sm mt-2">Strategic manufacturing partner</p>
+                </div>
+                <div class="card-shadow bg-white rounded-xl p-6 border-l-4 border-orange">
+                    <p class="font-bold text-navy text-lg">Kundan Electrical & Components</p>
+                    <p class="text-gray-600 text-sm mt-2">Long-term supplier relationship</p>
+                </div>
+                <div class="card-shadow bg-white rounded-xl p-6 border-l-4 border-navy">
+                    <p class="font-bold text-navy text-lg">Kundan Switch Gear Pvt. Ltd.</p>
+                    <p class="text-gray-600 text-sm mt-2">Specialized component manufacturing</p>
+                </div>
+                <div class="card-shadow bg-white rounded-xl p-6 border-l-4 border-sky">
+                    <p class="font-bold text-navy text-lg">Hercules Control Pvt. Ltd.</p>
+                    <p class="text-gray-600 text-sm mt-2">Industrial automation solutions</p>
+                </div>
+                <div class="card-shadow bg-white rounded-xl p-6 border-l-4 border-orange">
+                    <p class="font-bold text-navy text-lg">Cyan Technologies Ltd.</p>
+                    <p class="text-gray-600 text-sm mt-2">Technology & electronics manufacturing</p>
+                </div>
+                <div class="card-shadow bg-white rounded-xl p-6 border-l-4 border-navy">
+                    <p class="font-bold text-navy text-lg">Silicon Technologies</p>
+                    <p class="text-gray-600 text-sm mt-2">Electronics component supplier</p>
+                </div>
+                <div class="card-shadow bg-white rounded-xl p-6 border-l-4 border-sky">
+                    <p class="font-bold text-navy text-lg">Monad Electrotech</p>
+                    <p class="text-gray-600 text-sm mt-2">Electrical equipment manufacturing</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-sky/5 to-orange/5 rounded-xl p-8 border-2 border-sky/30 text-center">
+                <p class="text-lg text-gray-700 font-semibold">
+                    These established companies trust Jatin Electronics for their critical manufacturing needs, demonstrating our commitment to quality, reliability, and professional service excellence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="hero-bg text-white py-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Partner With Us</h2>
+            <p class="text-lg mb-8 text-gray-100">Join our growing list of satisfied industrial clients.</p>
+            <button class="bg-orange hover:bg-yellow-700 text-white px-10 py-3 rounded-lg font-bold text-lg transition">
+                Get in Touch
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-12 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-sky rounded-lg flex items-center justify-center">
+                            <span class="text-navy font-bold text-sm">JE</span>
+                        </div>
+                        <h4 class="font-bold">Jatin Electronics</h4>
+                    </div>
+                    <p class="text-sm text-gray-300">Zero Defect Manufacturing since 1997</p>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4 text-sky">Products</h5>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li><a href="products.html" class="hover:text-orange transition">Wire Harness</a></li>
+                        <li><a href="products.html" class="hover:text-orange transition">Communication Cables</a></li>
+                        <li><a href="products.html" class="hover:text-orange transition">Transformers</a></li>
+                        <li><a href="products.html" class="hover:text-orange transition">PCB Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4 text-sky">Company</h5>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li><a href="about.html" class="hover:text-orange transition">About Us</a></li>
+                        <li><a href="products.html" class="hover:text-orange transition">All Products</a></li>
+                        <li><a href="index.html#contact" class="hover:text-orange transition">Contact</a></li>
+                        <li><a href="about.html" class="hover:text-orange transition">Certifications</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4 text-sky">Contact</h5>
+                    <p class="text-sm text-gray-300 mb-2">📞 9460311875</p>
+                    <p class="text-sm text-gray-300">📧 jatinelectro2@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Jatin Electronics. All rights reserved. | ISO 9001:2015 Certified</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

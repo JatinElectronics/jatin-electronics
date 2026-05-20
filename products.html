@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Jatin Electronics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#003366',
+                        sky: '#0099FF',
+                        orange: '#FF6633',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #003366 0%, #0099FF 100%); }
+        .card-shadow { box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1); transition: all 0.3s ease; }
+        .card-shadow:hover { box-shadow: 0 12px 20px rgba(0, 51, 102, 0.2); transform: translateY(-4px); }
+        .spec-box { border-left: 4px solid #0099FF; background-color: #F0F9FF; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-navy to-sky rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">JE</span>
+                    </div>
+                    <div>
+                        <p class="text-navy font-bold text-lg">Jatin</p>
+                        <p class="text-orange text-xs font-semibold">Electronics</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-navy hover:text-orange font-semibold transition">Home</a>
+                    <a href="about.html" class="text-navy hover:text-orange font-semibold transition">About</a>
+                    <a href="products.html" class="text-orange font-semibold">Products</a>
+                    <a href="index.html#contact" class="text-navy hover:text-orange font-semibold transition">Contact</a>
+                </div>
+
+                <button @click="open = !open" class="md:hidden p-2">
+                    <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div x-show="open" class="md:hidden pb-4 border-t border-gray-200">
+                <a href="index.html" class="block text-navy py-2 font-semibold">Home</a>
+                <a href="about.html" class="block text-navy py-2 font-semibold">About</a>
+                <a href="products.html" class="block text-orange py-2 font-semibold">Products</a>
+                <a href="index.html#contact" class="block text-navy py-2 font-semibold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-bg text-white pt-32 pb-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Products & Services</h1>
+            <p class="text-lg text-gray-100">Complete Electronics Manufacturing Solutions for Industries Worldwide</p>
+        </div>
+    </section>
+
+    <!-- Products Content -->
+    <section class="py-16 md:py-24 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Wire Harness -->
+            <div class="mb-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2 pb-4 border-b-4 border-orange">Wire Harness Assembly</h2>
+                <p class="text-gray-700 text-lg mt-6 mb-8">Professional wire harness assembly services with 27+ years of expertise. Custom solutions for all connector types and industrial applications.</p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">JST Harness Assembly</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ Multiple connector types</li>
+                            <li>✓ 18-24 AWG wire gauges</li>
+                            <li>✓ Custom lengths</li>
+                            <li>✓ 100% tested</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">Molex Harness Assembly</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ KK, Micro-Fit series</li>
+                            <li>✓ 18-28 AWG options</li>
+                            <li>✓ Professional crimping</li>
+                            <li>✓ 5-7 day lead time</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">Lug Crimping Services</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ 10 AWG to 4/0 AWG</li>
+                            <li>✓ Ring, spade, pin lugs</li>
+                            <li>✓ Copper & tinned</li>
+                            <li>✓ Pull strength tested</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">Terminal & Ferrule</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ Spade, ring, pin types</li>
+                            <li>✓ Insulated ferrules</li>
+                            <li>✓ Multiple colors</li>
+                            <li>✓ ISO 9001 certified</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Communication Cables -->
+            <div class="mb-20 pt-12 border-t-2 border-gray-300">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2 pb-4 border-b-4 border-orange mt-8">Specialty Communication Cables</h2>
+                <p class="text-gray-700 text-lg mt-6 mb-8">Custom communication cables for diverse industrial protocols. From serial cables to optical probes, all manufactured to exacting standards.</p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">RJ45 to DB9 Serial</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ RS-232 standard</li>
+                            <li>✓ Shielded twisted pair</li>
+                            <li>✓ 2-50m lengths</li>
+                            <li>✓ RoHS compliant</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">RJ10/11 to DB9</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ Telephone-style connectors</li>
+                            <li>✓ Custom configurations</li>
+                            <li>✓ Legacy system integration</li>
+                            <li>✓ Signal integrity tested</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">Optical Probe Cable</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ Multimode/Singlemode</li>
+                            <li>✓ Multiple fiber configs</li>
+                            <li>✓ Up to 100m length</li>
+                            <li>✓ EMI-immune</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">USB & LAN Cables</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ USB 2.0 & 3.0</li>
+                            <li>✓ Cat5e/Cat6/Cat6A</li>
+                            <li>✓ Gold-plated connectors</li>
+                            <li>✓ Professional termination</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transformers -->
+            <div class="mb-20 pt-12 border-t-2 border-gray-300">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2 pb-4 border-b-4 border-orange mt-8">Transformers</h2>
+                <p class="text-gray-700 text-lg mt-6 mb-8">High-quality SMPS and current transformers for power conversion and measurement applications. Custom designs available.</p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card-shadow bg-white rounded-xl p-8 border-2 border-gray-200">
+                        <h3 class="text-2xl font-bold text-navy mb-4">SMPS Transformer</h3>
+                        <div class="spec-box p-4 rounded-lg mb-4">
+                            <p class="text-sm text-gray-800"><strong>Power Ratings:</strong> 10W to 500W+</p>
+                            <p class="text-sm text-gray-800"><strong>Input:</strong> 85-265V AC</p>
+                            <p class="text-sm text-gray-800"><strong>Efficiency:</strong> >90%</p>
+                            <p class="text-sm text-gray-800"><strong>Certified:</strong> IEC/UL/CE</p>
+                        </div>
+                        <button class="text-orange font-bold">Request Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-8 border-2 border-gray-200">
+                        <h3 class="text-2xl font-bold text-navy mb-4">Current Transformer (CT)</h3>
+                        <div class="spec-box p-4 rounded-lg mb-4">
+                            <p class="text-sm text-gray-800"><strong>Primary:</strong> 5A to 1000A+</p>
+                            <p class="text-sm text-gray-800"><strong>Accuracy:</strong> 0.2S to 3.0</p>
+                            <p class="text-sm text-gray-800"><strong>Efficiency:</strong> >98%</p>
+                            <p class="text-sm text-gray-800"><strong>Standard:</strong> IEC 61869-2</p>
+                        </div>
+                        <button class="text-orange font-bold">Request Quote →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Meter -->
+            <div class="mb-20 pt-12 border-t-2 border-gray-300">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2 pb-4 border-b-4 border-orange mt-8">Base Assembly Modules</h2>
+                <p class="text-gray-700 text-lg mt-6 mb-8">Complete PCB assemblies for smart energy meter applications. Ready-to-integrate modules with full testing and validation.</p>
+
+                <div class="card-shadow bg-white rounded-xl p-8 border-2 border-gray-200">
+                    <h3 class="text-2xl font-bold text-navy mb-6">Smart Meter Base Assembly Module</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="font-bold text-navy mb-4">PCB Features:</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>✓ 4-6 layers custom design</li>
+                                <li>✓ High-density SMT assembly</li>
+                                <li>✓ IPC-A-610 soldering</li>
+                                <li>✓ >95% test coverage</li>
+                                <li>✓ -10°C to +55°C operating</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold text-navy mb-4">Assembly Includes:</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>✓ Measurement circuitry</li>
+                                <li>✓ Signal processing</li>
+                                <li>✓ Communication interface</li>
+                                <li>✓ Power conditioning</li>
+                                <li>✓ Relay/output control</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="text-orange font-bold mt-6">Request Quote →</button>
+                </div>
+            </div>
+
+            <!-- PCB Services -->
+            <div class="pt-12 border-t-2 border-gray-300">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2 pb-4 border-b-4 border-orange mt-8">PCB & Electronic Component Services</h2>
+                <p class="text-gray-700 text-lg mt-6 mb-8">Complete PCB manufacturing, soldering, and assembly services. From prototype to high-volume production.</p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">PCB Soldering</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ SMT assembly</li>
+                            <li>✓ Through-hole soldering</li>
+                            <li>✓ IPC-A-610 standard</li>
+                            <li>✓ 100% inspected</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">Circuit Card Assembly</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ PCB fabrication</li>
+                            <li>✓ Component sourcing</li>
+                            <li>✓ Full assembly</li>
+                            <li>✓ Functional testing</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">Torroidal Assembly</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ Power toroids</li>
+                            <li>✓ Signal toroids</li>
+                            <li>✓ Custom designs</li>
+                            <li>✓ PCB mount options</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+
+                    <div class="card-shadow bg-white rounded-xl p-6 border-2 border-gray-200">
+                        <h3 class="text-lg font-bold text-navy mb-3">LED Driver Manufacturing</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>✓ DC-DC drivers</li>
+                            <li>✓ AC-DC drivers</li>
+                            <li>✓ Constant current</li>
+                            <li>✓ Dimmable options</li>
+                        </ul>
+                        <button class="text-orange font-bold text-sm">Get Quote →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="hero-bg text-white py-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+            <p class="text-lg mb-8 text-gray-100">Contact our team today for custom quotes and technical consultation.</p>
+            <button class="bg-orange hover:bg-yellow-700 text-white px-10 py-3 rounded-lg font-bold text-lg transition">
+                Request a Quote
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-12 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-sky rounded-lg flex items-center justify-center">
+                            <span class="text-navy font-bold text-sm">JE</span>
+                        </div>
+                        <h4 class="font-bold">Jatin Electronics</h4>
+                    </div>
+                    <p class="text-sm text-gray-300">Zero Defect Manufacturing since 1997</p>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4 text-sky">Products</h5>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li><a href="products.html" class="hover:text-orange transition">Wire Harness</a></li>
+                        <li><a href="products.html" class="hover:text-orange transition">Communication Cables</a></li>
+                        <li><a href="products.html" class="hover:text-orange transition">Transformers</a></li>
+                        <li><a href="products.html" class="hover:text-orange transition">PCB Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4 text-sky">Company</h5>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li><a href="about.html" class="hover:text-orange transition">About Us</a></li>
+                        <li><a href="products.html" class="hover:text-orange transition">All Products</a></li>
+                        <li><a href="index.html#contact" class="hover:text-orange transition">Contact</a></li>
+                        <li><a href="about.html" class="hover:text-orange transition">Certifications</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4 text-sky">Contact</h5>
+                    <p class="text-sm text-gray-300 mb-2">📞 9460311875</p>
+                    <p class="text-sm text-gray-300">📧 jatinelectro2@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Jatin Electronics. All rights reserved. | ISO 9001:2015 Certified</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
