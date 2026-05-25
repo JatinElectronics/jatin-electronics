@@ -25,10 +25,18 @@
         .hero-bg { background: linear-gradient(135deg, #003366 0%, #0099FF 100%); }
         .btn-primary { background-color: #FF6633; transition: all 0.3s ease; }
         .btn-primary:hover { background-color: #e55a1f; transform: scale(1.02); }
+        .btn-whatsapp { background-color: #25D366; transition: all 0.3s ease; }
+        .btn-whatsapp:hover { background-color: #1ea952; transform: scale(1.02); }
+        .btn-call { background-color: #0099FF; transition: all 0.3s ease; }
+        .btn-call:hover { background-color: #0077cc; transform: scale(1.02); }
         .card-shadow { box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1); transition: all 0.3s ease; }
         .card-shadow:hover { box-shadow: 0 12px 20px rgba(0, 51, 102, 0.2); transform: translateY(-4px); }
         .feature-icon { background-color: #E6F2FF; border-left: 4px solid #0099FF; }
         .section-title { color: #003366; border-bottom: 3px solid #FF6633; padding-bottom: 15px; }
+        .fab-button { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); transition: all 0.3s ease; cursor: pointer; }
+        .fab-button:hover { transform: scale(1.1); }
+        .faq-item { border-left: 4px solid #0099FF; padding-left: 16px; }
+        .modal-backdrop { background-color: rgba(0, 0, 0, 0.5); }
     </style>
 </head>
 <body class="bg-white">
@@ -56,7 +64,7 @@
                 </div>
 
                 <!-- CTA Button -->
-                <button class="hidden md:block btn-primary text-white px-8 py-2.5 rounded-lg font-bold">Get Quote</button>
+                <a href="https://wa.me/919460311875?text=Hi%20Jatin%20Electronics,%20I%20am%20interested%20in%20getting%20a%20quote." target="_blank" class="hidden md:block btn-primary text-white px-8 py-2.5 rounded-lg font-bold text-center">Get Quote</a>
 
                 <!-- Mobile Menu Button -->
                 <button @click="open = !open" class="md:hidden p-2">
@@ -72,7 +80,7 @@
                 <a href="about.html" class="block text-navy hover:text-orange py-2 font-semibold">About</a>
                 <a href="products.html" class="block text-navy hover:text-orange py-2 font-semibold">Products</a>
                 <a href="#contact" class="block text-navy hover:text-orange py-2 font-semibold">Contact</a>
-                <button class="w-full btn-primary text-white px-6 py-2.5 rounded-lg font-bold mt-4">Get Quote</button>
+                <a href="https://wa.me/919460311875?text=Hi%20Jatin%20Electronics,%20I%20am%20interested%20in%20getting%20a%20quote." target="_blank" class="block w-full btn-primary text-white px-6 py-2.5 rounded-lg font-bold mt-4 text-center">Get Quote</a>
             </div>
         </div>
     </nav>
@@ -92,12 +100,12 @@
                         Trusted by 10+ major industrial clients including Secure Meters, Pyrotech Electronics, and India's leading manufacturers for wire harnesses, communication cables, transformers, and smart meter modules.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="btn-primary text-white px-8 py-3 rounded-lg font-bold text-base md:text-lg">
+                        <a href="products.html" class="btn-primary text-white px-8 py-3 rounded-lg font-bold text-base md:text-lg text-center">
                             Explore Products
-                        </button>
-                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-base md:text-lg hover:bg-white/10 transition">
-                            Request Quote
-                        </button>
+                        </a>
+                        <a href="https://wa.me/919460311875?text=Hi%20Jatin%20Electronics,%20I%20need%20a%20quote%20for%20my%20manufacturing%20requirements." target="_blank" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-base md:text-lg hover:bg-white/10 transition text-center">
+                            Request Quote via WhatsApp
+                        </a>
                     </div>
                 </div>
                 <div class="hidden md:block">
@@ -269,6 +277,76 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 px-4 md:px-8 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2 text-center">Frequently Asked Questions</h2>
+            <p class="text-orange font-semibold text-center mb-12">Quick answers to common questions</p>
+
+            <div class="space-y-4" x-data="{ open: null }">
+                <!-- FAQ Item 1 -->
+                <div class="card-shadow bg-white rounded-xl overflow-hidden border-l-4 border-sky">
+                    <button @click="open = open === 1 ? null : 1" class="w-full px-8 py-4 flex justify-between items-center font-semibold text-navy hover:bg-gray-50">
+                        <span>What is the minimum order quantity (MOQ)?</span>
+                        <span x-show="open !== 1">+</span>
+                        <span x-show="open === 1">−</span>
+                    </button>
+                    <div x-show="open === 1" class="px-8 pb-4 text-gray-700 border-t border-gray-200">
+                        <p>MOQ varies by product type. For Wire Harness: 100 units, Communication Cables: 50 units, Transformers: 25 units. Contact us for custom requirements.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="card-shadow bg-white rounded-xl overflow-hidden border-l-4 border-sky">
+                    <button @click="open = open === 2 ? null : 2" class="w-full px-8 py-4 flex justify-between items-center font-semibold text-navy hover:bg-gray-50">
+                        <span>What are your lead times?</span>
+                        <span x-show="open !== 2">+</span>
+                        <span x-show="open === 2">−</span>
+                    </button>
+                    <div x-show="open === 2" class="px-8 pb-4 text-gray-700 border-t border-gray-200">
+                        <p>Standard lead time: 2-4 weeks from order confirmation. Expedited manufacturing available (4-7 days) with additional charges. Custom designs: 1-2 weeks for prototyping.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="card-shadow bg-white rounded-xl overflow-hidden border-l-4 border-sky">
+                    <button @click="open = open === 3 ? null : 3" class="w-full px-8 py-4 flex justify-between items-center font-semibold text-navy hover:bg-gray-50">
+                        <span>Do you provide custom manufacturing?</span>
+                        <span x-show="open !== 3">+</span>
+                        <span x-show="open === 3">−</span>
+                    </button>
+                    <div x-show="open === 3" class="px-8 pb-4 text-gray-700 border-t border-gray-200">
+                        <p>Yes! We specialize in custom manufacturing. From design to production, our experienced team can handle unique requirements. Share your specifications and we'll provide a tailored solution.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="card-shadow bg-white rounded-xl overflow-hidden border-l-4 border-sky">
+                    <button @click="open = open === 4 ? null : 4" class="w-full px-8 py-4 flex justify-between items-center font-semibold text-navy hover:bg-gray-50">
+                        <span>What quality certifications do you have?</span>
+                        <span x-show="open !== 4">+</span>
+                        <span x-show="open === 4">−</span>
+                    </button>
+                    <div x-show="open === 4" class="px-8 pb-4 text-gray-700 border-t border-gray-200">
+                        <p>We are ISO 9001:2015 certified. Our facility meets international quality standards with 100% inspection and testing of all products before delivery.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="card-shadow bg-white rounded-xl overflow-hidden border-l-4 border-sky">
+                    <button @click="open = open === 5 ? null : 5" class="w-full px-8 py-4 flex justify-between items-center font-semibold text-navy hover:bg-gray-50">
+                        <span>How can I get pricing and samples?</span>
+                        <span x-show="open !== 5">+</span>
+                        <span x-show="open === 5">−</span>
+                    </button>
+                    <div x-show="open === 5" class="px-8 pb-4 text-gray-700 border-t border-gray-200">
+                        <p>Contact us via WhatsApp, email, or phone with your specifications. We provide detailed quotes within 24 hours and can send samples for approval before full production.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-16 md:py-24 px-4 md:px-8 bg-gray-50">
         <div class="max-w-5xl mx-auto">
@@ -316,7 +394,11 @@
                         <p class="text-gray-700 font-semibold mb-2">Phone:</p>
                         <p class="text-gray-600 mb-4">9460311875 | 9783247383</p>
                         <p class="text-gray-700 font-semibold mb-2">Email:</p>
-                        <p class="text-gray-600">jatinelectro2@gmail.com</p>
+                        <p class="text-gray-600 mb-6">jatinelectro2@gmail.com</p>
+                        <div class="flex gap-3">
+                            <a href="https://wa.me/919460311875?text=Hi%20Jatin%20Electronics,%20I%20need%20information%20about%20your%20products." target="_blank" class="flex-1 btn-whatsapp text-white py-2.5 rounded-lg font-bold text-center text-sm">WhatsApp Chat</a>
+                            <a href="tel:+919460311875" class="flex-1 btn-call text-white py-2.5 rounded-lg font-bold text-center text-sm">Call Now</a>
+                        </div>
                     </div>
 
                     <div class="bg-white rounded-xl p-8 card-shadow border-l-4 border-navy">
@@ -362,8 +444,16 @@
                 </div>
                 <div>
                     <h5 class="font-bold mb-4 text-sky">Quick Contact</h5>
-                    <p class="text-sm text-gray-300 mb-2">📞 9460311875</p>
-                    <p class="text-sm text-gray-300">📧 jatinelectro2@gmail.com</p>
+                    <div class="flex gap-3 mb-4">
+                        <a href="https://wa.me/919460311875" target="_blank" class="btn-whatsapp text-white px-4 py-2 rounded font-bold text-xs">WhatsApp</a>
+                        <a href="tel:+919460311875" class="btn-call text-white px-4 py-2 rounded font-bold text-xs">Call</a>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-3">Follow us on social media:</p>
+                    <div class="flex gap-3">
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn" class="w-8 h-8 bg-sky/30 rounded hover:bg-sky transition flex items-center justify-center text-sm">in</a>
+                        <a href="https://facebook.com" target="_blank" title="Facebook" class="w-8 h-8 bg-sky/30 rounded hover:bg-sky transition flex items-center justify-center text-sm">f</a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram" class="w-8 h-8 bg-sky/30 rounded hover:bg-sky transition flex items-center justify-center text-sm">📷</a>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
@@ -371,5 +461,73 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Action Bar (FAB) -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-4 items-end" x-data="{ show: true }">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919460311875?text=Hi%20Jatin%20Electronics,%20I%20need%20assistance." target="_blank" class="fab-button btn-whatsapp text-white text-2xl shadow-lg hover:shadow-xl" title="Chat on WhatsApp">
+            💬
+        </a>
+
+        <!-- Call Button -->
+        <a href="tel:+919460311875" class="fab-button btn-call text-white text-2xl shadow-lg hover:shadow-xl" title="Call us">
+            ☎️
+        </a>
+
+        <!-- Quote Button -->
+        <a href="#contact" class="fab-button btn-primary text-white text-2xl shadow-lg hover:shadow-xl" title="Request a quote">
+            📝
+        </a>
+    </div>
+
+    <!-- Quick Quote Modal (Hidden by default) -->
+    <div id="quoteModal" class="hidden fixed inset-0 modal-backdrop z-50 flex items-center justify-center p-4" x-data="{ open: false }">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full card-shadow">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-navy">Quick Quote</h3>
+                <button onclick="document.getElementById('quoteModal').classList.add('hidden')" class="text-gray-500 hover:text-navy text-2xl">&times;</button>
+            </div>
+
+            <form class="space-y-3" onsubmit="handleQuoteSubmit(event)">
+                <div>
+                    <label class="block text-navy font-semibold mb-1 text-sm">Name *</label>
+                    <input type="text" required class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky text-sm">
+                </div>
+                <div>
+                    <label class="block text-navy font-semibold mb-1 text-sm">Email or Phone *</label>
+                    <input type="text" required class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky text-sm">
+                </div>
+                <div>
+                    <label class="block text-navy font-semibold mb-1 text-sm">Product Interest</label>
+                    <select class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky text-sm">
+                        <option>Select a product</option>
+                        <option>Wire Harness</option>
+                        <option>Communication Cables</option>
+                        <option>Transformers</option>
+                        <option>Smart Meter Modules</option>
+                        <option>PCB Services</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-navy font-semibold mb-1 text-sm">Brief Description</label>
+                    <textarea class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sky text-sm h-16" placeholder="Tell us your requirements..."></textarea>
+                </div>
+                <button type="submit" class="w-full btn-primary text-white py-2 rounded-lg font-bold text-sm">Send Quote Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            alert('Thanks! We will contact you shortly via WhatsApp or Phone.');
+            document.getElementById('quoteModal').classList.add('hidden');
+            e.target.reset();
+        }
+
+        function openQuoteModal() {
+            document.getElementById('quoteModal').classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>

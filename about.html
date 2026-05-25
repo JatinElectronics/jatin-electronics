@@ -26,6 +26,12 @@
         .card-shadow:hover { box-shadow: 0 12px 20px rgba(0, 51, 102, 0.2); transform: translateY(-4px); }
         .timeline-item { border-left: 4px solid #0099FF; padding-left: 20px; }
         .cert-box { border-top: 4px solid #FF6633; }
+        .btn-whatsapp { background-color: #25D366; transition: all 0.3s ease; }
+        .btn-whatsapp:hover { background-color: #1ea952; transform: scale(1.02); }
+        .btn-call { background-color: #0099FF; transition: all 0.3s ease; }
+        .btn-call:hover { background-color: #0077cc; transform: scale(1.02); }
+        .fab-button { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); transition: all 0.3s ease; cursor: pointer; }
+        .fab-button:hover { transform: scale(1.1); }
     </style>
 </head>
 <body class="bg-white">
@@ -363,9 +369,17 @@
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold mb-4 text-sky">Contact</h5>
-                    <p class="text-sm text-gray-300 mb-2">📞 9460311875</p>
-                    <p class="text-sm text-gray-300">📧 jatinelectro2@gmail.com</p>
+                    <h5 class="font-bold mb-4 text-sky">Quick Contact</h5>
+                    <div class="flex gap-3 mb-4">
+                        <a href="https://wa.me/919460311875" target="_blank" class="btn-whatsapp text-white px-4 py-2 rounded font-bold text-xs">WhatsApp</a>
+                        <a href="tel:+919460311875" class="btn-call text-white px-4 py-2 rounded font-bold text-xs">Call</a>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-3">Follow us on social media:</p>
+                    <div class="flex gap-3">
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn" class="w-8 h-8 bg-sky/30 rounded hover:bg-sky transition flex items-center justify-center text-sm">in</a>
+                        <a href="https://facebook.com" target="_blank" title="Facebook" class="w-8 h-8 bg-sky/30 rounded hover:bg-sky transition flex items-center justify-center text-sm">f</a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram" class="w-8 h-8 bg-sky/30 rounded hover:bg-sky transition flex items-center justify-center text-sm">📷</a>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
@@ -373,5 +387,23 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Action Bar (FAB) -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-4 items-end">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919460311875?text=Hi%20Jatin%20Electronics,%20I%20need%20assistance." target="_blank" class="fab-button btn-whatsapp text-white text-2xl shadow-lg hover:shadow-xl" title="Chat on WhatsApp">
+            💬
+        </a>
+
+        <!-- Call Button -->
+        <a href="tel:+919460311875" class="fab-button btn-call text-white text-2xl shadow-lg hover:shadow-xl" title="Call us">
+            ☎️
+        </a>
+
+        <!-- Quote Button -->
+        <a href="index.html#contact" class="fab-button" style="background-color: #FF6633;" class="text-white text-2xl shadow-lg hover:shadow-xl" title="Request a quote">
+            📝
+        </a>
+    </div>
 </body>
 </html>
