@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Meter Analyser",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "5500", "."],
+      "cwd": "F:\\Claude Code\\ARE & JE Internal Tools\\Meter Testing Record Analyser",
+      "port": 5500
+    }
+  ]
+}

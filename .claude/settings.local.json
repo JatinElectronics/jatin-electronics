@@ -5,7 +5,32 @@
       "Bash(git init *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(ls \"F:\\\\Claude Code\\\\\" && echo \"---\" && ls \"F:\\\\\" 2>/dev/null | head -20)",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(python --version 2>&1)",
+      "PowerShell(python3 --version 2>&1)",
+      "Bash(python -m http.server 5500)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5500/Meter_Analyser.html)",
+      "mcp__Claude_in_Chrome__computer",
+      "Bash(pdfimages -j \"Jatin Electronics Brochure.pdf\" brochure_image)",
+      "Bash(python)",
+      "Bash(cp \"F:\\\\Claude Code\\\\Jatin Electronics Website\\\\ilovepdf_pages-to-jpg\"/*.jpg \"F:\\\\Claude Code\\\\Jatin Electronics Website\\\\images\")",
+      "Bash(mv \"Jatin Electronics Brochure_page-0001.jpg\" \"brochure-cover.jpg\")",
+      "Bash(mv \"Jatin Electronics Brochure_page-0002.jpg\" \"brochure-products-1.jpg\")",
+      "Bash(mv \"Jatin Electronics Brochure_page-0003.jpg\" \"brochure-products-2.jpg\")",
+      "Bash(mv \"Jatin Electronics Brochure_page-0004.jpg\" \"brochure-specs.jpg\")",
+      "Bash(awk '{print \"Total: \" $1}')",
+      "Bash(file *.jpg)",
+      "Bash(identify *.jpg)",
+      "Bash(convert brochure-products-1.jpg -crop 100%x50%+0+0 +repage brochure-products-1-top.jpg)",
+      "Bash(convert brochure-products-1.jpg -crop 100%x50%+0+825 +repage brochure-products-1-bottom.jpg)",
+      "Bash(convert brochure-products-2.jpg -crop 100%x50%+0+0 +repage brochure-products-2-top.jpg)",
+      "Bash(convert brochure-products-2.jpg -crop 100%x50%+0+825 +repage brochure-products-2-bottom.jpg)",
+      "Bash(grep -v \"\\\\.jpg$\")"
     ]
   }
 }
