@@ -30,7 +30,9 @@
       "Bash(convert brochure-products-1.jpg -crop 100%x50%+0+825 +repage brochure-products-1-bottom.jpg)",
       "Bash(convert brochure-products-2.jpg -crop 100%x50%+0+0 +repage brochure-products-2-top.jpg)",
       "Bash(convert brochure-products-2.jpg -crop 100%x50%+0+825 +repage brochure-products-2-bottom.jpg)",
-      "Bash(grep -v \"\\\\.jpg$\")"
+      "Bash(grep -v \"\\\\.jpg$\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "WebSearch"
     ]
   }
 }
